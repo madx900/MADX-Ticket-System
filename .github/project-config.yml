@@ -1,0 +1,33 @@
+name: MADX Ticket System Board
+type: project
+description: Track development of MADX Ticket System features and issues
+
+columns:
+  - name: 🆕 To Do
+    description: Tasks that need to be worked on
+    
+  - name: 🏗️ In Progress
+    description: Tasks currently being worked on
+    
+  - name: 👀 Review
+    description: Tasks that need review
+    
+  - name: ✅ Done
+    description: Completed tasks
+
+labels:
+  - name: bug
+    color: d73a4a
+    description: Something isn't working
+    
+  - name: enhancement
+    color: a2eeef
+    description: New feature or request
+    
+  - name: documentation
+    color: 0075ca
+    description: Documentation improvements
+    
+  - name: high-priority
+    color: b60205
+    description: Needs immediate attention
