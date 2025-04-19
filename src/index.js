@@ -1,9 +1,8 @@
 const { Client, GatewayIntentBits, Collection } = require('discord.js');
 const fs = require('fs');
 const path = require('path');
-const config = require('./config');
+require('dotenv').config();
 
-// Create client instance
 const client = new Client({
     intents: [
         GatewayIntentBits.Guilds,
@@ -13,9 +12,8 @@ const client = new Client({
     ]
 });
 
-// Collections for commands and buttons
 client.commands = new Collection();
-client.buttons = new Collection();
+client.tickets = new Collection();
 
 // Load commands
 const commandsPath = path.join(__dirname, 'commands');
@@ -43,36 +41,4 @@ for (const file of eventFiles) {
     }
 }
 
-// Handle interactions
-client.on('interactionCreate', async interaction => {
-    if (interaction.isChatInputCommand()) {
-        const command = client.commands.get(interaction.commandName);
-        if (!command) return;
-
-        try {
-            await command.execute(interaction);
-        } catch (error) {
-            console.error(error);
-            await interaction.reply({
-                content: 'There was an error executing this command!',
-                ephemeral: true
-            });
-        }
-    } else if (interaction.isButton()) {
-        const button = client.buttons.get(interaction.customId);
-        if (!button) return;
-
-        try {
-            await button.execute(interaction);
-        } catch (error) {
-            console.error(error);
-            await interaction.reply({
-                content: 'There was an error handling this button!',
-                ephemeral: true
-            });
-        }
-    }
-});
-
-// Login
-client.login(config.token);
+client.login(process.env.TOKEN);
