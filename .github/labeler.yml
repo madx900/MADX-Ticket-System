@@ -1,14 +1,36 @@
-bug:
-  - '(bug|fix|issue|error)'
-enhancement:
-  - '(feature|enhance|improvement)'
-documentation:
-  - '(doc|docs|documentation)'
-tickets:
-  - '(ticket|support)'
-shop:
-  - '(shop|store|purchase)'
-security:
-  - '(security|secure|vulnerability)'
-high-priority:
-  - '(urgent|critical|important)'
+# Add 'bug' label to any issue with bug-related keywords
+'bug':
+- '**/*'
+  title: '(bug|fix|issue|error)'
+
+# Add 'enhancement' label to any issue with feature-related keywords
+'enhancement':
+- '**/*'
+  title: '(feature|enhance|improvement)'
+
+# Add 'documentation' label to any changes in docs
+'documentation':
+- 'docs/**/*'
+- '**/*.md'
+  title: '(doc|docs|documentation)'
+
+# Add 'tickets' label to ticket-related changes
+'tickets':
+- 'src/tickets/**/*'
+  title: '(ticket|support)'
+
+# Add 'shop' label to shop-related changes
+'shop':
+- 'src/shop/**/*'
+  title: '(shop|store|purchase)'
+
+# Add 'security' label to security-related changes
+'security':
+- '.github/workflows/*'
+- '**/security.md'
+  title: '(security|secure|vulnerability)'
+
+# Add 'high-priority' label to urgent issues
+'high-priority':
+- '**/*'
+  title: '(urgent|critical|important)'
