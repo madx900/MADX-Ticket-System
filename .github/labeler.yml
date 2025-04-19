@@ -1,0 +1,14 @@
+bug:
+  - '(bug|fix|issue|error)'
+enhancement:
+  - '(feature|enhance|improvement)'
+documentation:
+  - '(doc|docs|documentation)'
+tickets:
+  - '(ticket|support)'
+shop:
+  - '(shop|store|purchase)'
+security:
+  - '(security|secure|vulnerability)'
+high-priority:
+  - '(urgent|critical|important)'
